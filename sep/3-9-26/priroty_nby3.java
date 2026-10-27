@@ -39,4 +39,21 @@ public class priroty_nby3{
         }
         return result;
     }
+    public static ArrayList<Integer> app_2(int arr[], int n){
+        int candidate1 = arr[0], candidate2 = arr[2], count1 = 0, count2 = 0;
+        for(int i=0;i<n;i++){
+            int x = arr[i];
+            if(x == candidate1) count1++;
+            else if(x == candidate2) count2++;
+            else if(count1 == 0) {
+                count1 = 1; candidate1 = x ;
+        }
+        else if(count2 == 0){
+            count2 = 1; candidate2 = x ;
+        }
+        else {
+            count1--; count2--;
+        }
+    }
+    if(count )
 }
