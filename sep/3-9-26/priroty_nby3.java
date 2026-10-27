@@ -68,3 +68,4 @@ public class priroty_nby3{
     return result;
 }
 }
+//https://claude.ai/share/6a5f01f9-94e9-4259-add5-33d494b7110b
