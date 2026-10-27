@@ -26,6 +26,7 @@ public class priroty_nby3{
             arr[i] = s.nextInt();
         }
         System.out.println((app_1(arr,n)));
+        System.out.println((app_2(arr,n)));
     }
     public static ArrayList<Integer> app_1(int arr[],int n){
         HashMap<Integer,Integer>  map = new HashMap<>();
@@ -40,7 +41,7 @@ public class priroty_nby3{
         return result;
     }
     public static ArrayList<Integer> app_2(int arr[], int n){
-        int candidate1 = arr[0], candidate2 = arr[2], count1 = 0, count2 = 0;
+        int candidate1 = Integer.MIN_VALUE, candidate2 = Integer.MIN_VALUE+1, count1 = 0, count2 = 0;
         for(int i=0;i<n;i++){
             int x = arr[i];
             if(x == candidate1) count1++;
@@ -55,5 +56,15 @@ public class priroty_nby3{
             count1--; count2--;
         }
     }
-    if(count )
+    ArrayList <Integer> result = new ArrayList<>();
+    //malli check cheyali last ki, nijanga unndo ledo 
+    count1 =0;count2 = 0;
+    for(int i =0;i<n;i++){
+        if(candidate1 == arr[i]) count1++;
+        if(candidate2== arr[i]) count2++;
+    }
+    if(count1> n/3) result.add(candidate1);
+    if(count2 >n/3) result.add(candidate2);
+    return result;
+}
 }
