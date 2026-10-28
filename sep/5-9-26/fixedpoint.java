@@ -39,7 +39,7 @@ public class fixedpoint{
             int mid = l + (u-l)/2;
             if(arr[mid] == mid){
                  res = mid;
-                u = mid -1;
+                u = mid -1; // smallest kavali kada 
             }
             else if(arr[mid] > mid){
                 u = mid - 1;

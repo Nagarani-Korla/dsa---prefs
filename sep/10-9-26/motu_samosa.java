@@ -61,3 +61,37 @@ Sample Output-2:
 ----------------
 17
 */
+import java.util.*; 
+public class motu_samosa{
+	public static void main(String args[]){
+		Scanner s = new Scanner(System.in);
+		int n = s.nextInt();
+		int arr [] = new int[n];
+		for(int i=0;i<n;i++) arr[i] = s.nextInt();
+		int hours = s.nextInt();
+		System.out.print(app_1(arr,n, hours));
+	}
+	public static int app_1(int arr[], int n , int hours){
+		int i=1;
+		while(true){
+		//	System.out.println(i);
+			if(can_eat(arr,n, hours,i)){
+				return i;
+			}
+			i++;
+		}
+
+	}
+	public static boolean can_eat(int arr [] , int n , int hours, float speed){
+		int req_hours = 0;
+		for(int i=0;i<n;i++){
+			int samosa = arr[i];
+			req_hours += Math.ceil(samosa/speed);
+	}
+	//System.out.println(speed + " " + req_hours);
+	if(hours >= req_hours){
+		return true;
+	}
+	return false;
+}
+}

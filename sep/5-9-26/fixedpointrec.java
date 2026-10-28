@@ -17,6 +17,7 @@ public class fixedpointrec{
         }
         if(arr[mid] == mid){
             int left_possible = fixed_point(arr,l,mid - 1); // left side emayina possibilty unnda leda ani check chestuunam
+            // enduku anntey smallest kavali kada 
             if(left_possible == -1){ 
                 return mid;
             }
