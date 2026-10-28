@@ -30,20 +30,31 @@ public class BestTime{
         int n  = s.nextInt();
         int arr[] = new int [n];
         for(int i=0;i<n;i++) arr[i] = s.nextInt();
-        System.out.println(best_time(arr));
-        
+        System.out.println(best_time1(arr));
+        System.out.println(best_time2(arr)); 
     }
-    public static int best_time(int arr[]){
+    public static int best_time1(int arr[]){
        int  buy = Integer.MAX_VALUE;
         int   profit = 0;
         for(int i=0;i<arr.length;i++){
             buy = Math.min(arr[i],buy);
             profit = Math.max(arr[i] - buy,profit);
         }
-        if(profit >0){
-            return profit;
+        return profit;       
+}
+    public static int best_time2(int arr[]){
+        int buy =0, sell = 1;
+        int max_profit = 0;
+        while(sell<arr.length){
+        if(arr[buy]>arr[sell]){
+            buy = sell;
+            sell++;
         }
-        return profit;
-       
+        else{
+            max_profit = Math.max(max_profit, arr[sell] - arr[buy]);
+            sell++;
+        }
+    }
+    return max_profit;
 }
 }
