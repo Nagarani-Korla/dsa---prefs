@@ -34,3 +34,19 @@ Explanation: merged marks = [42 51 61 64 71 82 83 95]
 and median is (64+71)/2 is 67.5
 
 */
+import java.util;
+public class median{
+    public static void main(String args[]){
+        Scanner s = new Scanner(System.in);
+        int m = s.nextInt();
+        int n = s.nextInt();
+        int arr1 [] = new int[m];
+        int arr2 [] = new int[n];
+        for(int i=0;i<m;i++) arr1[i] = s.nextInt();
+        for(int i=0;i<n;i++) arr2[i] = s.nextInt();
+        System.out.println(find_median(arr1,arr2,m,n));
+    }
+    find_median(int arr1[],int arr2[],int m,int n){
+        
+    }
+}

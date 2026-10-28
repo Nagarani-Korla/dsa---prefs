@@ -94,4 +94,7 @@ public class motu_samosa{
 	}
 	return false;
 }
+public static int app_2(int arr[], int n, int hours){
+	int low = 1 , high = 
+}
 }
