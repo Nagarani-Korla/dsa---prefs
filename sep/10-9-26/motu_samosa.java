@@ -69,7 +69,8 @@ public class motu_samosa{
 		int arr [] = new int[n];
 		for(int i=0;i<n;i++) arr[i] = s.nextInt();
 		int hours = s.nextInt();
-		System.out.print(app_1(arr,n, hours));
+		System.out.println(app_1(arr,n, hours));
+		System.out.print(app_2(arr,n, hours));
 	}
 	public static int app_1(int arr[], int n , int hours){
 		int i=1;
@@ -95,6 +96,32 @@ public class motu_samosa{
 	return false;
 }
 public static int app_2(int arr[], int n, int hours){
-	int low = 1 , high = 
+	int max = Integer.MIN_VALUE;
+	for(int i=0;i<n;i++){
+		if(arr[i]> max){
+			max = arr[i];
+		}
+	}
+	int low = 1 , high = max;
+	int res = -1;
+	while(low<=high){
+		int mid = low + (high - low)/2;
+		int hours_spent = calc_hours(arr,n,hours,mid);
+		if(hours_spent<= hours){
+			res = mid;
+			high = mid -1;
+		}
+		else{
+			low = mid +1;
+		}
+	}
+	return res;
+}
+public static int calc_hours(int arr[], int n, int hours, float speed){
+	int hours_spent = 0;
+	for(int i=0;i<n;i++){
+		hours_spent += Math.ceil(arr[i]/speed);
+	}
+	return hours_spent;
 }
 }
