@@ -63,7 +63,7 @@ Sample Output-2:
 
 
 */
-import java.util.*;
+/*import java.util.*;
 public class AdjacencyMatrix{
     public static void main(String args[]){
         Scanner s = new Scanner(System.in);
@@ -81,6 +81,31 @@ public class AdjacencyMatrix{
                 System.out.print(adjacency_matrix[i][j]+ " ");
             }
             System.out.println();
+        }
+    }
+}*/
+import java.util.*;
+class AdjacencyMatrix{
+    public static void main(String args[])
+    {
+        Scanner s=new Scanner(System.in);
+        int v=s.nextInt();
+        int e=s.nextInt();
+        int adj[][]=new int[v][v];
+        for(int i=0;i<e;i++)
+        {
+            int l=s.nextInt();
+            int m=s.nextInt();
+            adj[l][m]=1;
+            adj[m][l]=1;
+        }
+        for(int i=0;i<v;i++)
+        {
+            for(int j=0;j<v;j++)
+            {
+                System.out.print(adj[i][j]+ " ");
+            }
+            System.out.println(" ");
         }
     }
 }

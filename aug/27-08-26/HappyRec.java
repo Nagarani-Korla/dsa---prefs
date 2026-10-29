@@ -16,41 +16,36 @@ Example
 100-> 1²+0²+0²=1
 Happy Number
 */
-
 import java.util.*;
-public class HappyRec{
-
-
-    public static void main(String args[]){
-
-
-        Scanner s = new Scanner(System.in);
-        int n = s.nextInt();
-         HashSet <Integer> st = new HashSet<>();
-        System.out.println(happy_check(n,st));
-    }
-    public static Boolean happy_check(int n,Set <Integer> s)
+class HappyRec
+{
+    public static boolean rec(int n,HashSet set)
     {
-       if(n ==1 ){
-           return true;
-       }
-       else if(s.contains(n)){
-           return false;
-       }
-       s.add(n);
-        int ss = squ_sum(n);
-        return happy_check(ss,s);
-       
-    } 
-    
-
-public static int squ_sum(int n ){
-    if(n ==0){
-        return 0;
+        if(n==1)
+        {
+            return true;
+        }
+        if(set.contains(n))
+        {
+            return false;
+        }
+        set.add(n);
+        int sum=0;
+        while(n>0)
+        {
+            int r=n%10;
+            sum=sum+r*r;
+            n=n/10;
+        }
+        n=sum;
+        return rec(n,set);
+        
     }
-    int r = n%10;
-    return r*r + squ_sum(n/10);
-}
-
-
-}
+    
+    public static void main(String args[])
+    {
+        Scanner s=new Scanner(System.in);
+        int n=s.nextInt();
+        HashSet<Integer> set=new HashSet<>();
+        System.out.println(rec(n,set));
+    }

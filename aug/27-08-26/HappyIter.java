@@ -19,7 +19,7 @@ Happy Number
 */
 import java.util.*;
 public class HappyIter{
-    public static void main(String args[]){
+    /*public static void main(String args[]){
         Scanner s = new Scanner(System.in);
         int n = s.nextInt();
         HashSet <Integer> st = new HashSet<>();
@@ -45,5 +45,41 @@ public class HappyIter{
             
         }
         while(true);
+    }*/
+   import java.util.*;
+class HappyIter
+{
+    public static boolean happy(int n)
+    {
+        HashSet<Integer> set=new HashSet<>();
+        //set.add(n);
+        
+        while(true)
+        {
+        set.add(n);
+        int sum=0;
+        while(n>0)
+        {
+            int r=n%10;
+            sum=sum+r*r;
+            n=n/10;
+        }
+        n=sum;
+       // set.add(n)
+        if(n==1)
+        {
+            return true;
+        }
+        if(set.contains(n))
+        {
+            return false;
+        }
+        }
+    }
+    public static void main(String args[])
+    {
+        Scanner s=new Scanner(System.in);
+        int n=s.nextInt();
+        System.out.println(happy(n));
     }
 }
